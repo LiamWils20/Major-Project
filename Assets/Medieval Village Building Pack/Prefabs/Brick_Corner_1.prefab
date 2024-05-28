@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33399987786688706}
   - component: {fileID: 23475350048928358}
   - component: {fileID: 4590598448916060139}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brick_Corner_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 5686637092386631018}
   - component: {fileID: 4510464762413583402}
   - component: {fileID: 6239037001045117981}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brick_Corner_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
