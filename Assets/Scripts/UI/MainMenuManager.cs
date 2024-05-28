@@ -11,18 +11,6 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] Button sceneOne;
     [SerializeField] Button sceneTwo;
     [SerializeField] Button quitGame;
-
-    [Header("Online Buttons")]
-    [SerializeField] Button agree;
-    [SerializeField] Button disagree;
-    [SerializeField] Button conAgree;
-    [SerializeField] Button conDisagree;
-    #endregion
-
-    #region Online Things
-    [SerializeField] bool onlineParticipation;
-    [SerializeField] GameObject consentForm;
-    [SerializeField] GameObject confirm;
     #endregion
 
     void Awake()
@@ -43,44 +31,10 @@ public class MainMenuManager : MonoBehaviour
             Application.Quit();
         });
         #endregion
-
-        #region Consent Form
-        agree.onClick.AddListener(() =>
-        {
-            confirm.SetActive(true);
-        });
-
-        disagree.onClick.AddListener(() =>
-        {
-            Application.Quit();
-        });
-        #endregion
-
-        #region Confirm Form
-        conAgree.onClick.AddListener(() =>
-        {
-            consentForm.SetActive(false);
-            confirm.SetActive(false);
-        });
-
-        conDisagree.onClick.AddListener(() =>
-        {
-            confirm.SetActive(false);
-        });
-        #endregion
     }
 
     private void Start()
     {
-        if (onlineParticipation)
-        {
-            consentForm.SetActive(true);
-            confirm.SetActive(false);
-        }
-        else
-        {
-            consentForm.SetActive(false);
-            confirm.SetActive(false);
-        }
+        
     }
 }

@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] float horizontalInput;
     [SerializeField] float verticalInput;
+    [SerializeField] bool isSprinting;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,16 @@ public class PlayerMovement : MonoBehaviour
         inputFromPlayer.Normalize();
 
         transform.Translate (inputFromPlayer * speed * Time.deltaTime);
+
+        isSprinting = player.GetComponent<PlayerInput>().GetIsSprinting();
+        if (isSprinting)
+        {
+            speed = 50f;
+        }
+        else if (!isSprinting)
+        {
+            speed = 15f;
+        }
 
     }
 }
