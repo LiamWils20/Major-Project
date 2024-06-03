@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIActivations : MonoBehaviour
 {
+    [SerializeField] Scrollbar scroll;
+
     [SerializeField] CameraMover cam;
     [SerializeField] GameObject player;
     [SerializeField] bool buildMenuIsOpen;
@@ -14,6 +17,7 @@ public class UIActivations : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        scroll.value = 1;
         buildMenu.SetActive(false);
     }
 
