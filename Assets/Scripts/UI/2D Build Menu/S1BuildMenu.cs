@@ -16,7 +16,7 @@ public class S1BuildMenu : MonoBehaviour
     {
         int i = ID - 1;
         script.BuildToPlace(buildPrefabs[i]);
-        Debug.Log("The Build Which has been selected is " + i);
+        Debug.Log("Selected Build ID:" + i);
         script.canBuild = true;
         input.UpdateMenuBool(false);
     }
