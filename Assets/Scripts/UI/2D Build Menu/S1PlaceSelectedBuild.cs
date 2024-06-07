@@ -80,6 +80,7 @@ public class S1PlaceSelectedBuild : MonoBehaviour
                 {
                     Debug.Log("Clicked");
                     GameObject b = Instantiate(buildToPlace);
+                    b.AddComponent<BoxCollider>();
                     b.transform.GetChild(0).AddComponent<MeshCollider>();
                     b.transform.GetChild(0).GetComponent<MeshRenderer>().materials = b.GetComponent<MeshRenderer>().materials;
                     b.transform.position = build.transform.GetChild(0).transform.position;
@@ -115,7 +116,7 @@ public class S1PlaceSelectedBuild : MonoBehaviour
             if (Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out hit, 1000f, layerMask))
             {
                 Debug.DrawRay(cam.transform.position, cam.transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
-                //Debug.Log("Did Hit");
+                Debug.Log("Did Hit");
 
                 if (hit.transform.gameObject.CompareTag("Build") && Input.GetMouseButtonDown(0))
                 {
