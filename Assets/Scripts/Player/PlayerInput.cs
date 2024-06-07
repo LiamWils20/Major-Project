@@ -10,10 +10,14 @@ public class PlayerInput : MonoBehaviour
 
     [SerializeField] float horizontalInput;
     [SerializeField] float verticalInput;
+    [SerializeField] float buildHorizontalInput;
+    [SerializeField] float buildVerticalInput;
     [SerializeField] float mouseX;
     [SerializeField] float mouseY;
     [SerializeField] bool isSprinting;
     [SerializeField] bool buildMenuIsOpen;
+    [SerializeField] bool canDelete;
+    [SerializeField] bool clicked;
 
     private void Awake()
     {
@@ -49,6 +53,18 @@ public class PlayerInput : MonoBehaviour
         input.Player.MouseY.performed += MouseY;
         input.Player.MouseY.canceled += MouseY;
         #endregion
+
+        #region Building Controls
+        input.Player.DeletePlacedBuilds.started += DeleteBuilds;
+
+        input.Build.Vertical.started += BuildVertical;
+        input.Build.Vertical.performed += BuildVertical;
+        input.Build.Vertical.canceled += BuildVertical;
+
+        input.Build.Horizontal.started += BuildHorizontal;
+        input.Build.Horizontal.performed += BuildHorizontal;
+        input.Build.Horizontal.canceled += BuildHorizontal;
+        #endregion
     }
 
     #region 'Get' Functions
@@ -59,6 +75,9 @@ public class PlayerInput : MonoBehaviour
     public bool GetBuildMenuIsOpen() { return buildMenuIsOpen; }
     public float GetMouseX() {  return mouseX; }
     public float GetMouseY() {  return mouseY; }
+    public bool GetCanDelete() {  return canDelete; }
+    public float GetBuildVerticalInput() { return buildVerticalInput; }
+    public float GetBuildHorizontalInput() { return buildHorizontalInput; }
 
     #endregion
 
@@ -88,7 +107,7 @@ public class PlayerInput : MonoBehaviour
     #region Menu UI Inputs
     void BuildMenu(InputAction.CallbackContext c)
     {
-        if (!buildMenuIsOpen)
+        if (!buildMenuIsOpen && !canDelete)
         {
             buildMenuIsOpen = true;
         }
@@ -110,6 +129,30 @@ public class PlayerInput : MonoBehaviour
     }
     #endregion
 
+    #region Building Controls Function
+    void DeleteBuilds(InputAction.CallbackContext c)
+    {
+        if (!canDelete && !buildMenuIsOpen)
+        {
+            canDelete = true;
+        }
+        else if (canDelete)
+        {
+            canDelete = false;
+        }
+    }
+
+    void BuildVertical(InputAction.CallbackContext c)
+    {
+        buildVerticalInput = c.ReadValue<float>();
+    }
+
+    void BuildHorizontal(InputAction.CallbackContext c)
+    {
+        buildHorizontalInput = c.ReadValue<float>();
+    }
+    #endregion
+
     public void UpdateMenuBool(bool s)
     {
         buildMenuIsOpen = s;
@@ -120,11 +163,13 @@ public class PlayerInput : MonoBehaviour
     private void OnEnable()
     {
         input.Player.Enable();
+        input.Build.Enable();
     }
 
     void OnDisable()
     {
         input.Player.Disable();
+        input.Build.Disable();
     }
 
     #endregion

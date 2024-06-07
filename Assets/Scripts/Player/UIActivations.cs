@@ -11,7 +11,9 @@ public class UIActivations : MonoBehaviour
     [SerializeField] GameObject player;
     [SerializeField] bool buildMenuIsOpen;
 
+    [SerializeField] GameObject reticle;
     [SerializeField] GameObject buildMenu;
+    [SerializeField] GameObject controlTexts;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +21,7 @@ public class UIActivations : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         scroll.value = 1;
         buildMenu.SetActive(false);
+        reticle.SetActive(true);
     }
 
     // Update is called once per frame
@@ -30,11 +33,15 @@ public class UIActivations : MonoBehaviour
         {
             EnableCursor();
             buildMenu.SetActive(true);
+            reticle.SetActive(false);
+            controlTexts.SetActive(false);
         }
         else if (!buildMenuIsOpen)
         {
             DisableCursor();
             buildMenu.SetActive(false);
+            reticle.SetActive(true);
+            controlTexts.SetActive(true);
         }
 
         if (Input.GetKeyDown(KeyCode.P))

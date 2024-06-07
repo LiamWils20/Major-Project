@@ -80,6 +80,24 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""DeletePlacedBuilds"",
+                    ""type"": ""Button"",
+                    ""id"": ""28b7946e-e796-4a82-8013-d796286fc854"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Clicked"",
+                    ""type"": ""Button"",
+                    ""id"": ""278d32df-1986-4916-912f-974195d32bdf"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -258,6 +276,120 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""action"": ""BuildMenu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""37c1c96d-c248-4774-a7b7-418340260815"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DeletePlacedBuilds"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""965b3093-d348-4658-a30a-61a92545b63f"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Clicked"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Build"",
+            ""id"": ""35c4c07d-d8a0-45a3-b9e9-6744db90c1fa"",
+            ""actions"": [
+                {
+                    ""name"": ""Vertical"",
+                    ""type"": ""Value"",
+                    ""id"": ""fe68e378-3a42-4a88-bcf6-740785432b81"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Horizontal"",
+                    ""type"": ""Value"",
+                    ""id"": ""d30f9c64-b617-4e46-abb5-4f1904eb592f"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""Keyboard"",
+                    ""id"": ""fe2d691e-fff5-4360-ad55-da6592e01c9b"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Horizontal"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""a2dad9fd-9671-4b3e-9cf6-e92ff3aeda79"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Horizontal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""ffd6f376-2bc0-4932-9769-01f6461bde21"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Horizontal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Keyboard"",
+                    ""id"": ""f76f8514-3069-40b2-9ba6-008740fec3c8"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Vertical"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""4beaa3e8-427c-4622-bf63-40dfd6123239"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Vertical"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""de54a5a3-9296-436a-bbdf-4150c1b32248"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Vertical"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -272,6 +404,12 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         m_Player_MouseY = m_Player.FindAction("MouseY", throwIfNotFound: true);
         m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
         m_Player_BuildMenu = m_Player.FindAction("BuildMenu", throwIfNotFound: true);
+        m_Player_DeletePlacedBuilds = m_Player.FindAction("DeletePlacedBuilds", throwIfNotFound: true);
+        m_Player_Clicked = m_Player.FindAction("Clicked", throwIfNotFound: true);
+        // Build
+        m_Build = asset.FindActionMap("Build", throwIfNotFound: true);
+        m_Build_Vertical = m_Build.FindAction("Vertical", throwIfNotFound: true);
+        m_Build_Horizontal = m_Build.FindAction("Horizontal", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -339,6 +477,8 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_MouseY;
     private readonly InputAction m_Player_Sprint;
     private readonly InputAction m_Player_BuildMenu;
+    private readonly InputAction m_Player_DeletePlacedBuilds;
+    private readonly InputAction m_Player_Clicked;
     public struct PlayerActions
     {
         private @InputActions m_Wrapper;
@@ -349,6 +489,8 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         public InputAction @MouseY => m_Wrapper.m_Player_MouseY;
         public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
         public InputAction @BuildMenu => m_Wrapper.m_Player_BuildMenu;
+        public InputAction @DeletePlacedBuilds => m_Wrapper.m_Player_DeletePlacedBuilds;
+        public InputAction @Clicked => m_Wrapper.m_Player_Clicked;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -376,6 +518,12 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @BuildMenu.started += instance.OnBuildMenu;
             @BuildMenu.performed += instance.OnBuildMenu;
             @BuildMenu.canceled += instance.OnBuildMenu;
+            @DeletePlacedBuilds.started += instance.OnDeletePlacedBuilds;
+            @DeletePlacedBuilds.performed += instance.OnDeletePlacedBuilds;
+            @DeletePlacedBuilds.canceled += instance.OnDeletePlacedBuilds;
+            @Clicked.started += instance.OnClicked;
+            @Clicked.performed += instance.OnClicked;
+            @Clicked.canceled += instance.OnClicked;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -398,6 +546,12 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @BuildMenu.started -= instance.OnBuildMenu;
             @BuildMenu.performed -= instance.OnBuildMenu;
             @BuildMenu.canceled -= instance.OnBuildMenu;
+            @DeletePlacedBuilds.started -= instance.OnDeletePlacedBuilds;
+            @DeletePlacedBuilds.performed -= instance.OnDeletePlacedBuilds;
+            @DeletePlacedBuilds.canceled -= instance.OnDeletePlacedBuilds;
+            @Clicked.started -= instance.OnClicked;
+            @Clicked.performed -= instance.OnClicked;
+            @Clicked.canceled -= instance.OnClicked;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -415,6 +569,60 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
+
+    // Build
+    private readonly InputActionMap m_Build;
+    private List<IBuildActions> m_BuildActionsCallbackInterfaces = new List<IBuildActions>();
+    private readonly InputAction m_Build_Vertical;
+    private readonly InputAction m_Build_Horizontal;
+    public struct BuildActions
+    {
+        private @InputActions m_Wrapper;
+        public BuildActions(@InputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Vertical => m_Wrapper.m_Build_Vertical;
+        public InputAction @Horizontal => m_Wrapper.m_Build_Horizontal;
+        public InputActionMap Get() { return m_Wrapper.m_Build; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(BuildActions set) { return set.Get(); }
+        public void AddCallbacks(IBuildActions instance)
+        {
+            if (instance == null || m_Wrapper.m_BuildActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_BuildActionsCallbackInterfaces.Add(instance);
+            @Vertical.started += instance.OnVertical;
+            @Vertical.performed += instance.OnVertical;
+            @Vertical.canceled += instance.OnVertical;
+            @Horizontal.started += instance.OnHorizontal;
+            @Horizontal.performed += instance.OnHorizontal;
+            @Horizontal.canceled += instance.OnHorizontal;
+        }
+
+        private void UnregisterCallbacks(IBuildActions instance)
+        {
+            @Vertical.started -= instance.OnVertical;
+            @Vertical.performed -= instance.OnVertical;
+            @Vertical.canceled -= instance.OnVertical;
+            @Horizontal.started -= instance.OnHorizontal;
+            @Horizontal.performed -= instance.OnHorizontal;
+            @Horizontal.canceled -= instance.OnHorizontal;
+        }
+
+        public void RemoveCallbacks(IBuildActions instance)
+        {
+            if (m_Wrapper.m_BuildActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IBuildActions instance)
+        {
+            foreach (var item in m_Wrapper.m_BuildActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_BuildActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public BuildActions @Build => new BuildActions(this);
     public interface IPlayerActions
     {
         void OnHorizontal(InputAction.CallbackContext context);
@@ -423,5 +631,12 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         void OnMouseY(InputAction.CallbackContext context);
         void OnSprint(InputAction.CallbackContext context);
         void OnBuildMenu(InputAction.CallbackContext context);
+        void OnDeletePlacedBuilds(InputAction.CallbackContext context);
+        void OnClicked(InputAction.CallbackContext context);
+    }
+    public interface IBuildActions
+    {
+        void OnVertical(InputAction.CallbackContext context);
+        void OnHorizontal(InputAction.CallbackContext context);
     }
 }
