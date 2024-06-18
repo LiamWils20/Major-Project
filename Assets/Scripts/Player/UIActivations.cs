@@ -10,6 +10,7 @@ public class UIActivations : MonoBehaviour
     [SerializeField] CameraMover cam;
     [SerializeField] GameObject player;
     [SerializeField] bool buildMenuIsOpen;
+    [SerializeField] bool canDisableCam;
 
     [SerializeField] GameObject reticle;
     [SerializeField] GameObject buildMenu;
@@ -33,14 +34,12 @@ public class UIActivations : MonoBehaviour
         {
             EnableCursor();
             buildMenu.SetActive(true);
-            reticle.SetActive(false);
             controlTexts.SetActive(false);
         }
         else if (!buildMenuIsOpen)
         {
             DisableCursor();
             buildMenu.SetActive(false);
-            reticle.SetActive(true);
             controlTexts.SetActive(true);
         }
 
@@ -53,15 +52,23 @@ public class UIActivations : MonoBehaviour
 
     void EnableCursor()
     {
-        cam.enabled = false;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        if (!canDisableCam)
+        {
+            cam.enabled = false;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            reticle.SetActive(false);
+        }
     }
     void DisableCursor()
     {
-        cam.enabled = true;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        if (!canDisableCam)
+        {
+            cam.enabled = true;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            reticle.SetActive(true);
+        }
     }
 
     public void SetBuildMenuIsOpenFalse()
