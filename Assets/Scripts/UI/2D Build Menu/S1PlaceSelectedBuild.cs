@@ -1,12 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
 using Unity.VisualScripting;
-using UnityEditor.Build.Reporting;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class S1PlaceSelectedBuild : MonoBehaviour
 {
@@ -140,6 +136,12 @@ public class S1PlaceSelectedBuild : MonoBehaviour
             canMoveBuild = false;
         }
 
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            SceneManager.LoadScene("Main Menu");
+        }
     }
 
     public void BuildToPlace(GameObject b)
