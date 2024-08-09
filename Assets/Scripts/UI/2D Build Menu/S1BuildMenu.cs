@@ -12,12 +12,11 @@ public class S1BuildMenu : MonoBehaviour
     [SerializeField] S1PlaceSelectedBuild script;
     [SerializeField] PlayerInput input;
 
-    [SerializeField] Button allBuildablesBtn;
-    [SerializeField] Button buildingsBtn;
     #endregion
 
     public void S1BuildMenuButton(int ID)
     {
+        gameObject.GetComponent<PauseMenuManager>().PlayClick();
         int i = ID - 1;
         script.BuildToPlace(buildPrefabs[i]);
         Debug.Log("Selected Build ID:" + i);

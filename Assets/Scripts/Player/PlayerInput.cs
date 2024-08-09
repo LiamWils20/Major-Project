@@ -14,6 +14,7 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] float buildVerticalInput;
     [SerializeField] float mouseX;
     [SerializeField] float mouseY;
+    [SerializeField] float flightInput;
     [SerializeField] bool isSprinting;
     [SerializeField] bool buildMenuIsOpen;
     [SerializeField] bool canDelete;
@@ -38,6 +39,14 @@ public class PlayerInput : MonoBehaviour
 
         input.Player.Sprint.started += StartSprint;
         input.Player.Sprint.canceled += CancelSprint;
+
+        input.Player.Ascend.started += Ascend;
+        input.Player.Ascend.performed += Ascend;
+        input.Player.Ascend.canceled += Ascend;
+
+        input.Player.Descend.started += Descend;
+        input.Player.Descend.performed += Descend;
+        input.Player.Descend.canceled += Descend;
         #endregion
 
         #region Menu UI Inputs
@@ -78,21 +87,19 @@ public class PlayerInput : MonoBehaviour
     public bool GetCanDelete() {  return canDelete; }
     public float GetBuildVerticalInput() { return buildVerticalInput; }
     public float GetBuildHorizontalInput() { return buildHorizontalInput; }
+    public float GetflightInput() {  return flightInput; }
 
     #endregion
 
     #region Standard Movement Functions
-
     void Horizontal(InputAction.CallbackContext c)
     {
         horizontalInput = c.ReadValue<float>();
     }
-
     void Vertical(InputAction.CallbackContext c)
     {
         verticalInput = c.ReadValue<float>();
     }
-
     void StartSprint(InputAction.CallbackContext c)
     {
         isSprinting = true;
@@ -101,7 +108,14 @@ public class PlayerInput : MonoBehaviour
     {
         isSprinting = false;
     }
-
+    void Ascend(InputAction.CallbackContext c)
+    {
+        flightInput = c.ReadValue<float>();
+    }
+    void Descend(InputAction.CallbackContext c)
+    {
+        flightInput = -c.ReadValue<float>(); 
+    }
     #endregion
 
     #region Menu UI Inputs

@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] float horizontalInput;
     [SerializeField] float verticalInput;
+    [SerializeField] float flightInput;
     [SerializeField] bool isSprinting;
 
     // Start is called before the first frame update
@@ -23,10 +24,10 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalInput = player.GetComponent<PlayerInput>().GetHorizontalInput();
         verticalInput = player.GetComponent<PlayerInput>().GetVerticalInput();
+        flightInput = player.GetComponent<PlayerInput>().GetflightInput();
 
-        Vector3 inputFromPlayer = new Vector3 (horizontalInput, 0, verticalInput);
+        Vector3 inputFromPlayer = new Vector3 (horizontalInput, flightInput, verticalInput);
         inputFromPlayer.Normalize();
-
         transform.Translate (inputFromPlayer * speed * Time.deltaTime);
 
         isSprinting = player.GetComponent<PlayerInput>().GetIsSprinting();

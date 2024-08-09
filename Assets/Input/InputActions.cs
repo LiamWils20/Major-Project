@@ -98,6 +98,33 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Ascend"",
+                    ""type"": ""Button"",
+                    ""id"": ""38695b88-b776-4cd6-a61d-00de6bcf1a55"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Descend"",
+                    ""type"": ""Button"",
+                    ""id"": ""212df229-89f4-49cf-8be5-e24caa291e0c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Picture"",
+                    ""type"": ""Button"",
+                    ""id"": ""1934c855-9b7a-49d1-9e7c-9d4ac9fae656"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -246,8 +273,30 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""7417d82d-4be5-4108-afca-21f79f11d2f2"",
+                    ""path"": ""<Gamepad>/rightStick/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MouseX"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""f132b0c6-988b-4e68-b066-a818c3538518"",
                     ""path"": ""<Mouse>/delta/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MouseY"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1ae8a310-e437-4e10-9e9c-6a199cb48be2"",
+                    ""path"": ""<Gamepad>/rightStick/y"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -268,8 +317,30 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""fe5934e2-ae4d-4db9-b5be-ebdc3bfe31fb"",
+                    ""path"": ""<Gamepad>/leftStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""8014829f-2c03-4ddf-b0d4-5cce6b2cef39"",
                     ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BuildMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a3047f60-472a-4de9-9de1-4de6b5f7d170"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -290,12 +361,100 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""99bf9820-8ada-40f7-881c-738126ffb8fb"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DeletePlacedBuilds"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""965b3093-d348-4658-a30a-61a92545b63f"",
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Clicked"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0614ee3b-e786-4e91-b497-0ce2277ffc19"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Clicked"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d74fdac6-00c7-4f6e-811a-d1d02eb19797"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Ascend"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a5540d88-d0a4-4a73-89b9-8ce028f5e590"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Ascend"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""48d27a49-5de9-45ff-823a-05489121df07"",
+                    ""path"": ""<Keyboard>/c"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Descend"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""eacb5bc1-1fc9-4863-9992-827b3f4f7e13"",
+                    ""path"": ""<Keyboard>/ctrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Descend"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9e005460-319b-41e8-90a3-28b0bf16b8e6"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Descend"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f73ef3ca-a94a-4697-a495-e185851acb5e"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Picture"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -406,6 +565,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         m_Player_BuildMenu = m_Player.FindAction("BuildMenu", throwIfNotFound: true);
         m_Player_DeletePlacedBuilds = m_Player.FindAction("DeletePlacedBuilds", throwIfNotFound: true);
         m_Player_Clicked = m_Player.FindAction("Clicked", throwIfNotFound: true);
+        m_Player_Ascend = m_Player.FindAction("Ascend", throwIfNotFound: true);
+        m_Player_Descend = m_Player.FindAction("Descend", throwIfNotFound: true);
+        m_Player_Picture = m_Player.FindAction("Picture", throwIfNotFound: true);
         // Build
         m_Build = asset.FindActionMap("Build", throwIfNotFound: true);
         m_Build_Vertical = m_Build.FindAction("Vertical", throwIfNotFound: true);
@@ -479,6 +641,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_BuildMenu;
     private readonly InputAction m_Player_DeletePlacedBuilds;
     private readonly InputAction m_Player_Clicked;
+    private readonly InputAction m_Player_Ascend;
+    private readonly InputAction m_Player_Descend;
+    private readonly InputAction m_Player_Picture;
     public struct PlayerActions
     {
         private @InputActions m_Wrapper;
@@ -491,6 +656,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         public InputAction @BuildMenu => m_Wrapper.m_Player_BuildMenu;
         public InputAction @DeletePlacedBuilds => m_Wrapper.m_Player_DeletePlacedBuilds;
         public InputAction @Clicked => m_Wrapper.m_Player_Clicked;
+        public InputAction @Ascend => m_Wrapper.m_Player_Ascend;
+        public InputAction @Descend => m_Wrapper.m_Player_Descend;
+        public InputAction @Picture => m_Wrapper.m_Player_Picture;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -524,6 +692,15 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Clicked.started += instance.OnClicked;
             @Clicked.performed += instance.OnClicked;
             @Clicked.canceled += instance.OnClicked;
+            @Ascend.started += instance.OnAscend;
+            @Ascend.performed += instance.OnAscend;
+            @Ascend.canceled += instance.OnAscend;
+            @Descend.started += instance.OnDescend;
+            @Descend.performed += instance.OnDescend;
+            @Descend.canceled += instance.OnDescend;
+            @Picture.started += instance.OnPicture;
+            @Picture.performed += instance.OnPicture;
+            @Picture.canceled += instance.OnPicture;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -552,6 +729,15 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Clicked.started -= instance.OnClicked;
             @Clicked.performed -= instance.OnClicked;
             @Clicked.canceled -= instance.OnClicked;
+            @Ascend.started -= instance.OnAscend;
+            @Ascend.performed -= instance.OnAscend;
+            @Ascend.canceled -= instance.OnAscend;
+            @Descend.started -= instance.OnDescend;
+            @Descend.performed -= instance.OnDescend;
+            @Descend.canceled -= instance.OnDescend;
+            @Picture.started -= instance.OnPicture;
+            @Picture.performed -= instance.OnPicture;
+            @Picture.canceled -= instance.OnPicture;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -633,6 +819,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         void OnBuildMenu(InputAction.CallbackContext context);
         void OnDeletePlacedBuilds(InputAction.CallbackContext context);
         void OnClicked(InputAction.CallbackContext context);
+        void OnAscend(InputAction.CallbackContext context);
+        void OnDescend(InputAction.CallbackContext context);
+        void OnPicture(InputAction.CallbackContext context);
     }
     public interface IBuildActions
     {

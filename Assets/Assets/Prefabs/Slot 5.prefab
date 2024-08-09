@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1923701770045679413}
   - component: {fileID: 790786689844059226}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Slot 5
-  m_TagString: Untagged
+  m_TagString: Build
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,9 +86,9 @@ GameObject:
   - component: {fileID: 6379948036048005730}
   - component: {fileID: 2131465408472478085}
   - component: {fileID: 1836927906662684242}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Build
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,7 +124,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6008751207096321683}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0

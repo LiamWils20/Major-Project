@@ -14,13 +14,15 @@ public class UIActivations : MonoBehaviour
 
     [SerializeField] GameObject reticle;
     [SerializeField] GameObject buildMenu;
-    [SerializeField] GameObject controlTexts;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        scroll.value = 1;
+        if(scroll != null)
+        {
+            scroll.value = 1;
+        }
         buildMenu.SetActive(false);
         reticle.SetActive(true);
     }
@@ -34,18 +36,11 @@ public class UIActivations : MonoBehaviour
         {
             EnableCursor();
             buildMenu.SetActive(true);
-            controlTexts.SetActive(false);
         }
         else if (!buildMenuIsOpen)
         {
             DisableCursor();
             buildMenu.SetActive(false);
-            controlTexts.SetActive(true);
-        }
-
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            Debug.Break();
         }
 
     }
@@ -58,6 +53,7 @@ public class UIActivations : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             reticle.SetActive(false);
+            Debug.Log("Cursor ENABLED");
         }
     }
     void DisableCursor()
@@ -68,6 +64,7 @@ public class UIActivations : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             reticle.SetActive(true);
+            Debug.Log("Cursor DISABLED");
         }
     }
 
@@ -75,4 +72,6 @@ public class UIActivations : MonoBehaviour
     {
         buildMenuIsOpen = false;
     }
+
+    public bool GetBuildOpen() {  return buildMenuIsOpen; }
 }
